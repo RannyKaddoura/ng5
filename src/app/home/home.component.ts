@@ -27,7 +27,24 @@ import { DataService } from '../data.service';
             style({ opacity: 0, transform: 'translateY(-75%)', offset: 1.0 }),
           ]))]), { optional: true })
       ])
+    ]),
+
+    trigger('logoanimis', [
+      transition('* => *', [
+
+        query(':enter', style({ opacity: 0 }), { optional: true }),
+
+        query(':enter', stagger('300ms', [
+          animate('.6s ease-in', keyframes([
+            style({ opacity: 0, transform: 'translateY(-75%)', offset: 0 }),
+            style({ opacity: .5, transform: 'translateY(35px)', offset: 0.3 }),
+            style({ opacity: 1, transform: 'translateY(0)', offset: 1.0 }),
+          ]))]), { optional: true })
+        
+      ])
     ])
+
+
   ]
 })
 
@@ -36,8 +53,9 @@ export class HomeComponent implements OnInit {
   itemCount: number = 4;
   btnText: string = 'Add an item';
   goalText: string = 'Starticket goal';
-  logoPhoto = ["https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png"];
+  logoanimi = ["https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png"];
   goals = [];
+  logoanimis=[""];
 
   constructor(private _data: DataService) {  }
 
