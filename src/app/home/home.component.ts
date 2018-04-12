@@ -55,7 +55,6 @@ export class HomeComponent implements OnInit {
   goalText: string = 'Starticket goal';
   logoanimi = ["https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png"];
   goals = [];
-  logoanimis=[""];
 
   constructor(private _data: DataService) {  }
 
